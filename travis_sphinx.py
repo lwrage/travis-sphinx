@@ -44,8 +44,8 @@ def deploy_docs(target_dir, branches, pr_flag):
         sys.stdout.flush()
         run('git', 'clone', 'https://github.com/davisp/ghp-import')
         run('./ghp-import/ghp_import.py', '-n', 'target/doc/build')
-        run('git', 'push', '-fq', 'https://%s@github.com/%s.git'
-            % (token, repo), 'gh-pages')
+        run('git', 'push', '-fq', 'https://%s@github.com/osate/osate.github.io.git'
+            % (token, repo), 'master')
     else:
         print('build triggered for non-master branch \'' + branch + \
                 '\', skipping deploy...')
